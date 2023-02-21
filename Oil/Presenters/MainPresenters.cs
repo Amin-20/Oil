@@ -11,7 +11,7 @@ namespace Oil.Presenters
 {
     public class MainPresenters
     {
-        public List<OilClass> Oils = new List<OilClass>()
+        public List<OilClass> oils = new List<OilClass>()
         {
             new OilClass()
             {
@@ -90,7 +90,7 @@ namespace Oil.Presenters
         {
             if (!_db.Oils.Any())
             {
-                _db.Oils.AddRange(Oils);
+                _db.Oils.AddRange(oils);
                 _db.SaveChanges();
             }
         }
