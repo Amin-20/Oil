@@ -15,6 +15,6 @@ namespace Oil.Data
         {
                 
         }
-        public List<OilClass> Oils { get; set; }
+        public DbSet<OilClass> Oils { get; set; }
     }
 }
