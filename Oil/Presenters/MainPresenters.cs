@@ -43,18 +43,18 @@ namespace Oil.Presenters
             _view = view;
             _db = new OilContext();
             LoadAllData();
-            _view.SelectionChange += ViewSelectionChange;
             _view.LoadMain += ViewLoadMain;
-            _view.QuantityChange += ViewQuantityChange;
-            _view.QuantumChange += ViewQuantumChange;
+            _view.SelectionChange += ViewSelectionChange;
+            _view.MoneyChange += ViewMoneyChange;
+            _view.LiterChange += ViewLiterChange;
 
         }
 
-        private void ViewQuantumChange(object sender, EventArgs e)
+        private void ViewMoneyChange(object sender, EventArgs e)
         {
-            if (_view.QuantumText != String.Empty)
+            if (_view.MoneyText != String.Empty)
             {
-                _view.TotalAmountText = decimal.Parse(_view.QuantumText).ToString();
+                _view.TotalAmountText = decimal.Parse(_view.MoneyText).ToString();
             }
             else
             {
@@ -62,11 +62,11 @@ namespace Oil.Presenters
             }
         }
 
-        private void ViewQuantityChange(object sender, EventArgs e)
+        private void ViewLiterChange(object sender, EventArgs e)
         {
-            if (_view.QuantityText != String.Empty)
+            if (_view.LiterText != String.Empty)
             {
-                _view.TotalAmountText = (decimal.Parse(_view.QuantityText) * decimal.Parse(_view.PriceText)).ToString();
+                _view.TotalAmountText = (decimal.Parse(_view.LiterText) * decimal.Parse(_view.PriceText)).ToString();
             }
             else
             {

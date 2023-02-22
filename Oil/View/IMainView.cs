@@ -11,13 +11,13 @@ namespace Oil.View
     {
         EventHandler<EventArgs> SelectionChange { get; set; }
         EventHandler<EventArgs> LoadMain { get; set; }
-        EventHandler<EventArgs> QuantityChange { get; set; }
-        EventHandler<EventArgs> QuantumChange { get; set; }
+        EventHandler<EventArgs> MoneyChange { get; set; }
+        EventHandler<EventArgs> LiterChange { get; set; }
         OilClass SelectedOil { get; }
         List<OilClass> Oils { set; }
         string PriceText { get; set; }
-        string QuantityText { get; set; }
-        string QuantumText { get; set; }
+        string MoneyText { get; set; }
+        string LiterText { get; set; }
         string TotalAmountText { get; set; }
     }
 }

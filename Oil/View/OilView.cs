@@ -21,8 +21,8 @@ namespace Oil
 
         public EventHandler<EventArgs> SelectionChange { get; set; }
         public EventHandler<EventArgs> LoadMain { get; set; }
-        public EventHandler<EventArgs> QuantityChange { get; set; }
-        public EventHandler<EventArgs> QuantumChange { get; set; }
+        public EventHandler<EventArgs> MoneyChange { get; set; }
+        public EventHandler<EventArgs> LiterChange { get; set; }
 
         public OilClass SelectedOil
         {
@@ -41,8 +41,8 @@ namespace Oil
             }
         }
         public string PriceText { get => priceLbl.Text; set => priceLbl.Text = value; }
-        public string QuantityText { get => moneyTxtb.Text; set => moneyTxtb.Text = value; }
-        public string QuantumText { get => literTxtb.Text; set => literTxtb.Text = value; }
+        public string MoneyText { get => moneyTxtb.Text; set => moneyTxtb.Text = value; }
+        public string LiterText { get => literTxtb.Text; set => literTxtb.Text = value; }
         public string TotalAmountText { get => amountLbl.Text; set => amountLbl.Text = value; }
 
         public bool Money { get; set; } = false;
@@ -55,17 +55,17 @@ namespace Oil
 
         private void moneyTxtb_TextChanged(object sender, EventArgs e)
         {
-            QuantityChange.Invoke(sender, e);
+            MoneyChange.Invoke(sender, e);
         }
 
         private void priceLbl_TextChanged(object sender, EventArgs e)
         {
-            QuantityChange.Invoke(sender, e);
+            LiterChange.Invoke(sender, e);
         }
 
         private void literTxtb_TextChanged(object sender, EventArgs e)
         {
-            QuantumChange.Invoke(sender, e);
+            LiterChange.Invoke(sender, e);
         }
 
         private void moneyRBtn_CheckedChanged(object sender, EventArgs e)
